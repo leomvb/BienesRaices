@@ -1,0 +1,476 @@
+/* Estas hojas de CSS se leen en cascada, de arriba hacia abajo y el último selector/última propiedad y valor son los que aplican en caso de ser repetidos */
+
+/* H1 es el SELECTOR, osea, el ELEMENTO al que se le pretende aplicar lo que viene siendo el CSS */
+/* h1 {
+    Aquí, COLOR vendría siendo la propiedad del CSS. Estas usualmente son definidas por CSS. Osea, existe propiedades para colocar un color de fondo, para agregar espacio, hacer la fuente más grande, etc... Luego, viene el VALOR que en este caso sería BLUE
+color: white;
+font-size: 16px;
+} */
+
+/* También se puede escribir de forma corrida cada propiedad y valor siempre y cuando se cumpla con finalizar con ; pero ya depende de gustos y la mayoría lo hace en cada línea
+
+h1 {
+color: white; font-size: 16px;
+} */
+
+/* h1 {
+color: black;
+font-size: 28px;
+} */
+
+/* Cuando se agrega una clase y se deja un espacio, por ejemplo: class="encabezado mayuscula", si en CSS hay un .encabezado {... y también un .mayuscula {... tomará las propiedades de ambos, osea, se puede asignar varias clases en algo al dejar espacios entre ellas en el HTML pero aquí deben ir separados */
+
+
+
+/* ?SNIPPET de desarrollador de GOOGLE para evitar que PADDING cambie tamaños de otras cosas que también tengan valores en px: 
+    html {
+        box-sizing: border-box;
+    }
+/   * *, *:before, *:after {
+        box-sizing: inherit;
+    } 
+Ignorar el / que está arriba antes de * */
+
+
+
+/* ?COMIENZO REAL DEL CSS */
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* Reset para REMS ya que 62.5% = 10px de 16px que vienen por defecto. Con esto hacemos que en toda la hoja HTML, 1rem equivalga a 10px y por ende sea más sencillo hacer cuentas y usar esta unidad */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    /* Esto lo saqué también de la página de Google Fonts al copiar los links con los que vinculé en HTML las fuentes, sale también un apartado donde se copia lo que puse abajo de esto */
+    font-size: 1.6rem;
+    /* Aquí colocamos 1.6rem para volver a hacer que las fuentes sean de 16px como eran originalmente antes de cambiar el font-size a 62.5% en HTML, ya que ahorita estaban a 10px en lugar de 16 px */
+    line-height: 2;
+    /* Usamos esto para separar un poco los espacios entre líneas de textos en todo el BODY */
+}
+
+/* ?Globales */
+
+/* Aquí asignamos para que todas las imágenes adquieran un ancho máximo del 100% para hacerlas responsivas ya que se supone se adaptarán al máximo ancho de sus boxes/contenedores o donde estén metidas */
+img {
+    max-width: 100%;
+}
+
+.contenedor {
+    /* !width: 95%; */
+    max-width: 120rem;
+    /* La medida de PX no suele ser la mejor opción porque a la hora de verse la página en distintos dispositivos puede ser problemático, por ende se suele usar más EM o inclusive más aún REM. Dado que cambiamos arriba en HTML font-size a 10px (por defecto son 16px), esto hace que sea más sencillo usar REM ya que ahora 1rem = 10px, por ende teníamos max-width 1200px y ahora pusimos 120rem que es lo mismo */
+    margin: 0 auto 0 auto;
+    /* Al usar MARGIN se asignan 4 valores que corresponden a TOP, RIGHT, BOTTOM, LEFT como si fuera en sentido a las agujas del reloj */
+}
+
+.logo:hover {
+    transition: 1s;
+    transform: scale(1.2);
+}
+
+/* Es bueno que cuando se haga un proyecto, se asigne anticipadamente un sistema de tamaños de fuentes. Esto se hace para evitar problemas a futuro de que un párrafo tenga tamaños indebidos respecto a un h1, etc... Es lo que haremos a continuación */
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 3.4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2.6rem;
+}
+
+/* En este caso asignamos que los encabezados vayan teniendo una diferencia de 0.4rem entre ellos de forma as/descendiente como se quiera ver */
+
+
+/* ?Utilidades */
+
+.sección {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Aquí creamos nuestras propias utilidades para así poder rápidamente aplicar ciertas propiedades y valores a cosas en el futuro. En este caso estamos creando líbremente "fw-300" que lo nombramos así para saber identificar que ese cambia el tamaño de fuente o groso a 300 y luego hacemos otro que sea para centrar y le pusimos por ejemplo "centrar-texto". Ya después tan solo nos queda usar ambos selectores que creamos en cada situación que necesitemos que el texto tenga esas propiedades */
+.fw-300 {
+    font-weight: 300;
+    /* Aquí estamos asignando ese valor de 300 pero tenemos que tener en ccuenta que nosotros habíamos subido unas fuentes de Google donde elegímos usar 300, 400, 700 y 900. Si no hubiésemos subido la de 300, no podríamos usar el valor en este caso ya que no tendría de dónde tomar en cuenta ese valor para saber qué tamaño aplicar */
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+.d-block {
+    display: block!important;
+    /* Aquí agregamos al VALOR BLOCK lo de !IMPORTANT para hacerle entender que aunque el archivo CSS leerá en cascada y más abajo hay unas partes que anularían el DISPLAY: BLOCK ya que están con INLINE-BLOCK, entonces esto precisamente evita eso y le da prioridad a este. Otro dato es que si más abajo hay otro !IMPORTANT que para el la misma propiedad/valor, entonces aplicará el efecto cascada y aquel será tomado en cuenta por encima de este. Sin embargo no se sugiere usar tantas veces esto y por lo general máximo 3 veces por hoja estaría bien */
+}
+
+/* !.contenido-centrado {
+    max-width: 800px;
+} */
+
+
+/* ?Botones */
+
+.botón {
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    /* Aquí podríamos cambiar entre PADDING y MARGIN para notar las diferencias entre ambos donde MARGIN agrega separación pero como hacia afuera mientras que PADDING agrega hacia adentro del elemento */
+    margin-top: 3rem;
+    display: inline-block;
+    /* Esta propiedad la agregamos porque viene por defecto con valor INLINE y por lo general a los enlaces (en este caso A) no les afecta si cambiamos el WIDTH o MARGINs, por eso hemos de usar BLOCK para quitar eso y que ya aplique. Sin embargo en este caso vamos a poner INLINE-BLOCK para que el elemento no tome todo el espacio disponible */
+    text-align: center;
+    border: none;
+    border-radius: 3rem;
+    /* !display: block;
+!    flex: 0 0 100%; */
+    transition: all .2s ease-in-out;
+    /* !Agregué estas últimas 2 propiedades de forma persona para darle forma redonda a los botones y agregar un efecto de zoom in y out */
+}
+
+/* !@media (min-width: 768px) {
+!    .botón {
+!        display: inline-block;
+!        flex: 0 0 auto;
+!    }
+!} */
+
+/* !Lo que sigue también lo agregué de forma personal */
+.botón:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.botón-amarillo {
+    background-color: #e08709;
+}
+
+.botón-verde {
+    background-color: #71b100;
+}
+
+
+/* ?Header */
+
+.site-header {
+    background-color: #333333;
+    padding: 1rem 0 3rem 0;
+}
+
+/* Se puede agregar ambas clases (.site-header) e (.inicio) poniendo ese punto, aunque también se podría con espacio enter header e inicio */
+.site-header.inicio {
+    background-image: url(../img/header.jpg);
+    /* Como este archivo CSS está en una carpeta y la imagen que buscamos está afuera de esa carpeta en otra carpeta, hay que poner 2 puntos para salir de donde estamos y la ruta ya detectará los archivos de esa carpeta exterior */
+    background-position: center center;
+    background-size: cover;
+    /* Con el valor COVER le hacemos entender que ha de cubrir toda el área en distintos tamaños de pantalla */
+    height: 100vh;
+    /* La medida VH se supone que hace entender que tendrá el 100% de la altura de la pantalla donde se esté viendo la página */
+    min-height: 60rem;
+    /* Aquí con MIN-HEIGHT estamos definiendo que  si el dispositivo donde se ve la página es más pequeño, lo mínimo que llegará la altura será a 600px y el máximo se seguirá manteniendo a 100vh como especificamos arriba*/
+}
+
+.contenido-header {
+    /* Aquí usamos HEIGHT para indicarle al elemento de arriba que sea de toda la altura del padre que si reviamos en HTML sería HEADER principal. Habiendo INSPECCIONADO con DEVELOPER TOOLS en la página antes de dar este valor, notábamos la diferencia de lo que abarcaba esta caja por decirlo así y la de su padre */
+    height: 100%;
+    /* Un dato a saber es que FLEX solo afecta al primer nivel de HIJOS o HIJOS directos digamos, por eso en este caso lo que estamos aplicando aquí solo afecará a H1 si revisamos el HTML justo donde pusimos la CLASS CONTENIDO-HEADER */
+    display: flex;
+    /* Usamos FLEX-DIRECTION para indicar la dirección en que queremos que se aplique el FLEXBOX, que por defecto viene en ROW */
+    flex-direction: column;
+    justify-content: space-between;
+    /* Usamos SPACE-BETWEEN porque ahora que dimos HEIGHT 100% arriba, pasó a ser del mismo tamaño que el HEADER donde está la imagen de fondo de laa cas, entonces como pretendemos colocar "VENTAS..." abajo, al usar esto los separa entre el NAVBAR, el LOGO y este título de "VENTAS..." haciendo que se coloque abajo */
+    text-align: center;
+}
+
+/* !@media (min-width: 768px) {
+!    .contenido-header{
+!        text-align: left;
+!    }
+!} */
+
+/* Ahora dado que el título H1 de "VENTAS..." no se ve, procedemos a seleccionar el H1 que está dentro de esta clase para cambiar su formato. Además especificamos así porque tendremos más H1s por página y queremos solamente afectar a este que está en el HEADER por ahora */
+.contenido-header h1 {
+    color: #ffffff;
+    padding-bottom: 2rem;
+    /* Recordemos que PADDING es el espacio hacia dentro del elemento mientras que MARGIN es separación del elemento hacia otro elemento, que en este caso no hay ninguno */
+    max-width: 60rem;
+    /* Aquí asignamos el máximo de ancho y esto lo hacemos para pasar parte del título a la parte de abajo ya que se veía todo en una línea y aunque podíamos usar en HTML directamente un BR, es preferible no acudir a eso si podemos usuar aquí otras formas. Fuimos probando hasta que vimos que con 60rem ya se divide "Ventas de Casas y Departamentos" arriba y abajo "Exclusivos de Lujo" */
+    line-height: 2;
+    /* Con LINE-HEIGHT lo que hacemos es indicarle la altura que habrá de separación entre las líneas. Se puede usar distintos tipos de unidades donde poner 1 sería equivalente a 1 reglón de separación, pero en este caso usamos REM */
+}
+
+.barra {
+    display: flex;
+    /* Con esta propiedad y valor se activa FLEXBOX en el elemento de la clase de barra */
+    justify-content: space-between;
+    /* JUSTIFY-CONTENT es para alinear horizontalmente */
+    align-items: center;
+    /* El ALIGN-ITEMS es para alinear verticalmente */
+    /* NOTA IMPORTANTE: Para los casos de arriba si se cambiara flex-direction: column, esto haría que se invirtiera y por ende lo que antes servía paara alinear horizontalmente, lo hará verticalmente y viceversa */
+    padding-top: 3rem;
+    /* PADDING-TOP significa como espacio hacia dentro del elemento mientras que el MARGIN es la separación con otro elemento hacia afuera */
+}
+
+/* !@media (min-width: 768px) {
+!    .barra {
+!        display: flex;
+!        justify-content: space-between;
+!        align-items: center;
+!    }
+!} */
+
+/* ?Navegación */
+
+/* Aquí queremos decir que los elementos A que sean hijos de la clase NAVEGACIÓN tendrán estos atributos */
+.navegación a {
+    color: rgba(255, 255, 255, 1);
+    /* Al usar RGBA para la propiedad COLOR, el último valor es la transparencia por lo que puede ser útil en muchas ocasiones */
+    text-decoration: none;
+    font-size: 2.2rem;
+    /* Aquí pasamos a usar unidad REM en vez de los 18px que estaban, pero dado que arriba en HTML cambiamos font-size a 10px cuando por defecto viene en 16px, ahora hace que cada REM sea equivalente a 1px para ser más fácil de sacar cuentas. Por ende 1.8rem = 18px que era lo que estaba fijado antes */
+    /* !display: block; */
+    margin-right: 2rem;
+}
+
+/* El HOVER en este caso es un SEUDO SELECTOR y desempeñan alguna función que en este caso hace que se produzca algún tipo de reacción/animación al pasar el mouse encima del elemento, que en este caso son los menús de Nosotros, Anuncions, Blogs, Contacto */
+.navegación a:hover {
+    color: #71b100;
+    transition: 0.5s;
+}
+
+/* El LAST-OF-TYPE hace que el último elemento A no tenga margen que en este caso sería la palabra CONTACTO de toda la NAV */
+.navegación a:last-of-type {
+    margin: 0;
+}
+
+
+/* ?Iconos Nosotros */
+
+.iconos-nosotros {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icono {
+    flex-basis: calc(33.3% - 1rem);
+    /* Se usa FLEX-BASIS como si fuera WIDHT ya que es lo que se tiene que usar cuando estamos en FLEX y por lo general el valor se asigna en % */
+    /* Y se usa CALC para hacer cualquier operación matemática que en este caso estamos indicando que el tamaño sea de 33.3% menos 1rem o 10px de esta forma nos evitamos tener que calcular nosotros cuánto es en % ese REM o esos 10px */
+    text-align: center;
+    /* Esta es una de las formas fáciles de centrar. Aquí tanto las imágenes como los párrafos son hijos de la clase ICONO, por eso les aplica el formato y los centra que es lo que queríamos */
+}
+
+/* Aquí vamos a darle formato a los H3 que son hijos directos de esta clase ICONO */
+.icono h3 {
+    text-transform: uppercase;
+    /* Aquí estamos indicando que ponga en MAYÚSCULAS esos títulos H3 */
+}
+
+
+/* ?Anuncios */
+
+.contenedor-anuncios {
+    display: flex;
+    justify-content: space-between;
+}
+
+.anuncio {
+    flex-basis: calc(33.3% - 1rem);
+    border: 1px solid #5b5b5b;
+    /* La propiedad BORDER de arriba escrita de esa forma sería como escribir estas 3 propiedades: 
+        border-style: solid;
+        border-color: #b5b5b5;
+        border-width: 1px;    
+    */
+    background-color: #f5f5f5;
+}
+
+.contenido-anuncio {
+    padding: 2rem;
+    /* El poner PADDING aplica esas distancias de todos los alrededores por lo cual esa propiedad arriba sería como escribir: 
+        padding-top: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 2rem;
+    pero también podríamos indicar: 
+        padding: 2rem 4rem 2rem 4rem;
+    donde estaríamos indicando en el orden TOP, RIGHT, BOTTOM y LEFT aunque si quisieramos especificar valores iguales para TOP y BOTTOM, así como para RIGHT y LEFT, entonces podemos hacerlo así: 
+        padding: 2rem 4rem;
+    y ya él sabrá que son 2rem para TOP/BOTTOM y 4rem para RIGHT/LEFT
+    */
+}
+
+/* En la siguiente línea estaremos juntando clases y selectores para evitar escribir tantas líneas de código. Estos se pueden separar con una COMA y se pueden escribir en la misma línea o en la línea que sigue según preferencias */
+.contenido-anuncio h3, .contenido-anuncio p {
+    margin: 0;
+}
+
+.precio {
+    color: #71b100;
+    font-weight: 700;
+}
+
+.iconos-características {
+    list-style: none;
+    /* Esto lo usamos para eliminar de las listas los números o circulos que se colocan al inicio de cada lista */
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.iconos-características li {
+    display: flex;
+}
+
+.iconos-características li img {
+    margin-right: 2rem;
+}
+
+.ver-todas {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* ?Contacto Home */
+
+.imagen-contacto {
+    background-image: url(../img/encuentra.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+}
+
+.contenido-contacto {
+    flex: 1;
+    /* FLEX 1 se le conoce como factor de crecimiento. Lo que hace es detectar cuánto tamaño hay disponible al igual que cuántos elementos hay y realiza la división donde por ejemplo si hay 1000px y solamente hay un elemento divide 1000px entre 1 y le asigna el tamaño de 1000px a ese elemento. Si hubiera 2 elementos, le asignaría 500 a cada uno */
+    color: #ffffff;
+}
+
+.contenido-contacto p {
+    font-size: 1.8rem;
+}
+
+
+/* ?Sección Inferior */
+
+.sección-inferior {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sección-inferior .blog {
+    flex-basis: 60%;
+}
+
+.sección-inferior .testimoniales {
+    flex-basis: calc(40% - 2rem);
+}
+
+.entrada-blog {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.entrada-blog:last-of-type {
+    margin-bottom: 0;
+}
+
+.entrada-blog .imagen {
+    flex-basis: 40%;
+}
+
+.entrada-blog .texto-entrada {
+    flex-basis: calc(60% - 3rem);
+}
+
+.texto-entrada a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.texto-entrada h4 {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Esto que vemos a continuación se le conoce como SEUDO SELECTOR y lo que hace es indicar "crea un elemento después del H4" y en este caso lo usaremos para crear una línea que vimos que hacía falta en esta parte de la página justo después del título H4 y antes del P que sigue abajo */
+.texto-entrada h4::after {
+    content: '';
+    display: block;
+    width: 15rem;
+    height: 0.5rem;
+    background-color: #71b100;
+    margin-top: 1rem;
+}
+
+.texto-entrada span {
+    color: #e08709;
+}
+
+
+/* ?Testimoniales */
+
+.testimonial {
+    background-color: #71b100;
+    font-size: 2.4rem;
+    padding: 2rem;
+    color: #ffffff;
+    border-radius: 2rem;
+}
+
+.testimonial p {
+    text-align: right;
+}
+
+.testimonial blockquote::before {
+    content: '';
+    background-image: url(../img/comilla.svg);
+    width: 4rem;
+    height: 4rem;
+    display: block;
+    /* Aquí empezamos a dar uso a algo llamado POSITION: RELATIVE y ABSOLUTE donde vamos a poder mover con mayor exactitud elementos de una manera que no podemos con MARGIN y todas esas propiedades. Pero para hacerlo tenemos que indicar ABSOLUTE al PADRE donde queremos que tome en cuenta toda esa área en la que se posicionará y luego el RELATIVE en el HIJO para así proceder a usar luego TOP, RIGHT, BOTTOM, LEFT para decirle que se mueva hacia esas direcciones X cantidad de px por ejemplo */
+    position: absolute;
+    left: -2rem;
+}
+
+.testimonial blockquote {
+    position: relative;
+    padding-left: 5rem;
+    font-weight: 300;
+}
+
+
+/* ?Footer */
+
+.site-footer {
+    background-color: #333333;
+    margin: 0;
+}
+
+.contenedor-footer {
+    padding: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright {
+    margin: 0;
+    color: #ffffff;
+}
