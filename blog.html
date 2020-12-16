@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bienes Raices</title>
+
+    <!-- DATO: STYLE se usaba antiguamente y se puede dar formato pero el problema es habría que hacer todo el trabajo por cada HTML que se tenga, entonces es duplicar trabajo innecesariamente pudiendo hacer todo por CSS y así reflejará los cambios en todas las páginas en la que los elementos estén
+    
+        <style>
+        h1 {
+            color: blue;
+        }
+    </style> -->
+
+    <!-- En https://fonts.google.com/ puedo buscar más de 1000 tipos de fuentes de manera completamente gratis en caso de no querer usar las que vengan aquí y simplemente he de linkear la fuente -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Esta es una librería que descargué de https://necolas.github.io/normalize.css/8.0.1/normalize.css la cual permite normalizar los tamaños y todo en distintos dispositivos, esa hoja CSS la copié y pegué en el archivo que linkee y listo -->
+    <link rel="stylesheet" href="./css/normalize.css">
+
+    <!-- Siempre debemos poner de último nuestra hoja de style.css para que sea lo último y definitivo que tome en cuenta dando prioridad a la misma por encima de las demás hojas vinculadas -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Por lo general el HEADER suele usarse donde está la NAVBAR -->
+    <!-- El ID funciona como CLASS pero este es único y no puede o debería usarse en varias cosas a la vez -->
+    <header class="site-header">
+
+        <!-- Creamos un DIV con CLASS CONTAINER para que podamos agarrar todo el contenido del HEADER y buscar centrarlo -->
+        <!-- A diferencia del ID, CLASS sí se puede utilizar de forma repetida con el mismo nombre -->
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="index.html">
+                    <img class="logo" src="img/logo.svg" alt="Logotipo de Bienes Raices">
+                </a>
+
+                <!-- NAVBAR que es para hacer menús de navegación -->
+                <nav class="navegación">
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="anuncios.html">Anuncios</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contacto</a>
+                    <!-- Por defecto sin agregar el target viene invisiblemente así: target="self" y hace que abra en la misma página -->
+                    <!-- Se puede agregar target="_blank" a los enlaces (a) y eso hace que al abrir esos enlaces, los abre en una nueva pestaña -->
+                </nav>
+            </div>
+        </div>
+
+    </header>
+ 
+    <main class="contenedor sección contenido-centrado">
+       
+        <h1 class="fw-300 centrar-texto">Nuestro Blog</h1>
+
+        <article class="entrada-blog">
+            <div class="imagen">
+                <img src="img/blog1.jpg" alt="Terraza">
+            </div>
+            <div class="texto-entrada">
+                <!-- Recordemos que para simular un enlace al clickear, usamos # en donde va el link -->
+                <a href="entrada.html">
+                    <h4>Terraza en el techo de tu casa</h4>
+                </a>
+                <p>Escrito el: <span> 20/10/2019 </span> por: <span> Admin </span> </p>
+                <!-- Se usa em | strong | b para dar un FORMATO ya sea de itálico, bold, etc... a cosas dentro de HTML pero por lo general es mejor hacer todo en CSS -->
+                <p>Consejos para construir una terraza en el techo de tu casa, con los mejores materiales y
+                    ahorrando
+                    dinero
+                </p>
+            </div>
+        </article>
+
+        <article class="entrada-blog">
+            <div class="imagen">
+                <img src="img/blog2.jpg" alt="Decoración">
+            </div>
+            <div class="texto-entrada">
+                <a href="entrada.html">
+                    <h4>Construye una alberca en tu hogar</h4>
+                </a>
+                <p>Escrito el: <span> 20/10/2019 </span> por: <span> Admin </span> </p>
+                <p>Maximiza el espacio en tu hogar con esta guía, aprende a combinar muebles y colores para
+                    darle
+                    vida a
+                    tu
+                    espacio
+                </p>
+            </div>
+        </article>
+
+        <article class="entrada-blog">
+            <div class="imagen">
+                <img src="img/blog3.jpg" alt="Decoración">
+            </div>
+            <div class="texto-entrada">
+                <a href="entrada.html">
+                    <h4>Guía para la decoración de tu hogar</h4>
+                </a>
+                <p>Escrito el: <span> 20/10/2019 </span> por: <span> Admin </span> </p>
+                <p>Maximiza el espacio en tu hogar con esta guía, aprende a combinar muebles y colores para
+                    darle
+                    vida a
+                    tu
+                    espacio
+                </p>
+            </div>
+        </article>
+
+        <article class="entrada-blog">
+            <div class="imagen">
+                <img src="img/blog4.jpg" alt="Decoración">
+            </div>
+            <div class="texto-entrada">
+                <a href="entrada.html">
+                    <h4>Guía para la decoración de tu habitación</h4>
+                </a>
+                <p>Escrito el: <span> 20/10/2019 </span> por: <span> Admin </span> </p>
+                <p>Maximiza el espacio en tu hogar con esta guía, aprende a combinar muebles y colores para
+                    darle
+                    vida a
+                    tu
+                    espacio
+                </p>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Se suele usar siempre al final de la página y puede contener NAVBAR también. Se puede usar también para la misma función de ser como la parte final de una sección (se podría usar por ejemplo arriba en TESTIMONIALS donde dice mi nombre e incluir todo ese P como algo adentro de FOOTER) -->
+    <footer class="site-footer sección">
+        <div class="contenedor contenedor-footer">
+            <nav class="navegación">
+                <a href="nosotros.html">Nosotros</a>
+                <a href="anuncios.html">Anuncios</a>
+                <a href="blog.html">Blog</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <p class="copyright">Todos los Derechos Reservados 2020 &copy;</p>
+            <!-- Se usa &copy porque es una forma de poner una ENTIDAD que es como un atajo para poner símbolos en HTML -->
+        </div>
+    </footer>
+
+</body>
+
+</html>

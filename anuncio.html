@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bienes Raices</title>
+
+    <!-- DATO: STYLE se usaba antiguamente y se puede dar formato pero el problema es habría que hacer todo el trabajo por cada HTML que se tenga, entonces es duplicar trabajo innecesariamente pudiendo hacer todo por CSS y así reflejará los cambios en todas las páginas en la que los elementos estén
+    
+        <style>
+        h1 {
+            color: blue;
+        }
+    </style> -->
+
+    <!-- En https://fonts.google.com/ puedo buscar más de 1000 tipos de fuentes de manera completamente gratis en caso de no querer usar las que vengan aquí y simplemente he de linkear la fuente -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Esta es una librería que descargué de https://necolas.github.io/normalize.css/8.0.1/normalize.css la cual permite normalizar los tamaños y todo en distintos dispositivos, esa hoja CSS la copié y pegué en el archivo que linkee y listo -->
+    <link rel="stylesheet" href="./css/normalize.css">
+
+    <!-- Siempre debemos poner de último nuestra hoja de style.css para que sea lo último y definitivo que tome en cuenta dando prioridad a la misma por encima de las demás hojas vinculadas -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Por lo general el HEADER suele usarse donde está la NAVBAR -->
+    <!-- El ID funciona como CLASS pero este es único y no puede o debería usarse en varias cosas a la vez -->
+    <header class="site-header">
+
+        <!-- Creamos un DIV con CLASS CONTAINER para que podamos agarrar todo el contenido del HEADER y buscar centrarlo -->
+        <!-- A diferencia del ID, CLASS sí se puede utilizar de forma repetida con el mismo nombre -->
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="index.html">
+                    <img class="logo" src="img/logo.svg" alt="Logotipo de Bienes Raices">
+                </a>
+
+                <!-- NAVBAR que es para hacer menús de navegación -->
+                <nav class="navegación">
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="anuncios.html">Anuncios</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contacto</a>
+                    <!-- Por defecto sin agregar el target viene invisiblemente así: target="self" y hace que abra en la misma página -->
+                    <!-- Se puede agregar target="_blank" a los enlaces (a) y eso hace que al abrir esos enlaces, los abre en una nueva pestaña -->
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+    <h1 class="fw-300 centrar-texto">Casa en Venta frente al Bosque</h1>
+    <img src="img/destacada.jpg" alt="">
+
+    <main class="contenedor sección contenido-centrado">
+        <!-- Creamos la clase RESUMEN-PROPIEDAD para poder alínear luego el precio con los iconos ya que en el proyecto final debe verse así -->
+        <div class="resumen-propiedad">
+            <p class="precio">$3.000.000</p>
+            <ul class="iconos-características">
+                <li>
+                    <img src="img/icono_wc.svg" alt="icono wc">
+                    <p>3</p>
+                </li>
+                <li>
+                    <img src="img/icono_estacionamiento.svg" alt="autos">
+                    <p>3</p>
+                </li>
+                <li>
+                    <img src="img/icono_dormitorio.svg" alt="cuartos">
+                    <p>4</p>
+                </li>
+            </ul>
+        </div>
+
+       <p>Donec vitae efficitur mi, nec rutrum dolor. Vestibulum id libero euismod, tempor lectus nec, condimentum elit. Praesent non dolor et est tincidunt placerat. Aenean posuere enim quis lorem suscipit, non porttitor diam facilisis. Integer eget purus sit amet arcu aliquet efficitur ac sed ex. Praesent porta elit a velit placerat, sagittis aliquet libero malesuada. Maecenas eros neque, dignissim sed tortor ut, scelerisque vehicula tortor. Maecenas sodales pharetra augue, et molestie risus mollis sit amet. Curabitur vel euismod purus, quis placerat quam. Phasellus hendrerit neque ut sem consequat gravida. Etiam quis cursus erat, vitae sodales felis. Praesent et elementum dolor, sed ornare nisi. Etiam faucibus justo at ipsum congue, a suscipit mi varius. Aliquam purus dui, pellentesque ac lacinia vel, egestas sit amet erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+       <p>Nulla risus quam, pharetra quis enim accumsan, vestibulum pulvinar leo. Curabitur quis est nec elit pretium sodales. Donec commodo sagittis ipsum vitae dictum. Nam in nulla sem. Pellentesque placerat leo sit amet libero sagittis facilisis. Integer eu porttitor elit. Maecenas facilisis, mauris eget suscipit molestie, nibh nibh euismod est, vestibulum varius eros ante volutpat massa. In magna purus, ornare sit amet elementum quis, semper at enim. Vivamus tellus neque, semper eget rhoncus eu, porta ut orci. Proin eu viverra dolor. Cras vitae est a est condimentum egestas eu eget est. Etiam at odio commodo, varius nisl et, gravida arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+    </main>
+
+    <!-- Se suele usar siempre al final de la página y puede contener NAVBAR también. Se puede usar también para la misma función de ser como la parte final de una sección (se podría usar por ejemplo arriba en TESTIMONIALS donde dice mi nombre e incluir todo ese P como algo adentro de FOOTER) -->
+    <footer class="site-footer sección">
+        <div class="contenedor contenedor-footer">
+            <nav class="navegación">
+                <a href="nosotros.html">Nosotros</a>
+                <a href="anuncios.html">Anuncios</a>
+                <a href="blog.html">Blog</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <p class="copyright">Todos los Derechos Reservados 2020 &copy;</p>
+            <!-- Se usa &copy porque es una forma de poner una ENTIDAD que es como un atajo para poner símbolos en HTML -->
+        </div>
+    </footer>
+
+</body>
+
+</html>

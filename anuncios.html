@@ -33,7 +33,7 @@
 
     <!-- Por lo general el HEADER suele usarse donde está la NAVBAR -->
     <!-- El ID funciona como CLASS pero este es único y no puede o debería usarse en varias cosas a la vez -->
-    <header class="site-header inicio">
+    <header class="site-header">
 
         <!-- Creamos un DIV con CLASS CONTAINER para que podamos agarrar todo el contenido del HEADER y buscar centrarlo -->
         <!-- A diferencia del ID, CLASS sí se puede utilizar de forma repetida con el mismo nombre -->
@@ -53,50 +53,9 @@
                     <!-- Se puede agregar target="_blank" a los enlaces (a) y eso hace que al abrir esos enlaces, los abre en una nueva pestaña -->
                 </nav>
             </div>
-
-            <h1>Venta de Casas y Departamentos Exclusivos de Lujo</h1>
         </div>
 
     </header>
-
-    <!-- Se suele usar SECTION solo si aplica al tener de hijos HX y realmente ser una sección diferente de la página -->
-    <section class="contenedor sección">
-
-        <h2 class="fw-300 centrar-texto">Más Sobre Nosotros</h2>
-
-        <!-- Luego se usa BASTANTE el DIV para no repetir de forma errónea los SECTION y básicamente con DIV podemos dividir partes dentro de otra parte que en este caso sería la sección -->
-        <div class="iconos-nosotros">
-            <!-- Creamos esta clase de arriba para poder aplicar un FLEXBOX a todos los hijos de abajo y empzar a modificar esta sección de la página -->
-            <div class="icono">
-                <!-- Aquí también creamos una clase, seleccionando <div> y luego presionando CTRL + D para seleccionar todos y procedemos a mover con las flechas y escribir la clase -->
-                <img src="img/icono1.svg" alt="Seguridad">
-                <h3>Seguridad</h3>
-                <p>Dolor sit amet consectetur adipisicing elit. Magnam enim reprehenderit quasi eaque, perferendis
-                    consectetur
-                    harum
-                    quae! Quae omnis natus quo dolorem illo blanditiis non. Illum, modi? Eaque, laboriosam iusto?</p>
-            </div>
-
-            <div class="icono">
-                <img src="img/icono2.svg" alt="Precio">
-                <h3>El Mejor Precio</h3>
-                <p>Dolor sit amet consectetur adipisicing elit. Ipsa mollitia totam voluptas eum alias, vero ut
-                    molestiae
-                    exercitationem quae deleniti dolor, delectus beatae nisi atque dolorum illo aperiam non consequatur.
-                </p>
-            </div>
-
-            <div class="icono">
-                <img src="img/icono3.svg" alt="Tiempo">
-                <h3>A Tiempo</h3>
-                <p>Dolor sit amet consectetur adipisicing elit. Iure, nulla obcaecati quam magnam debitis sit et sed
-                    dicta,
-                    facilis
-                    velit fugit fugiat nisi enim cumque. Quam suscipit magni tempora culpa.</p>
-            </div>
-        </div>
-
-    </section>
 
     <!-- Aquí se usa MAIN ya que es el contenido principal y el propósito de la página (venta de casas). La misma solo se debe usar 1 sola vez por documento.html -->
     <main class="sección contenedor">
@@ -106,6 +65,7 @@
         <!-- De nuevo se vuelve a hacer uso del DIV que es muy útil para separar secciones/partes de una misma sección o un mismo contenido por decirlo así -->
         <!-- Damos esta clase contenedor-anuncios para aplicar flexbox en css luego -->
         <div class="contenedor-anuncios">
+
             <div class="anuncio">
                 <img src="img/anuncio1.jpg" alt="Anuncio Casa en el Lago">
                 <div class="contenido-anuncio">
@@ -126,7 +86,9 @@
                             <p>4</p>
                         </li>
                     </ul>
+
                     <a href="anuncio.html" class="botón botón-amarillo d-block">Ver Propiedad</a>
+
                 </div>
             </div>
 
@@ -150,7 +112,9 @@
                             <p>4</p>
                         </li>
                     </ul>
+
                     <a href="anuncio.html" class="botón botón-amarillo d-block">Ver Propiedad</a>
+
                 </div>
             </div>
 
@@ -179,81 +143,88 @@
 
                 </div>
             </div>
-        </div>
 
-        <div class="ver-todas">
-            <a href="anuncios.html" class="botón botón-verde">Ver Todas</a>
+            <div class="anuncio">
+                <img src="img/anuncio4.jpg" alt="Anuncio Casa de Lujo">
+                <div class="contenido-anuncio">
+                    <h3>Casa fuera de la Ciudad</h3>
+                    <p>Casa con alberca y acabdos de lujo fuera de la ciudad, excelente oportunidad</p>
+                    <p class="precio">$2.000.000</p>
+                    <ul class="iconos-características">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="autos">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="cuartos">
+                            <p>5</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="botón botón-amarillo d-block">Ver Propiedad</a>
+
+                </div>
+            </div>
+
+            <div class="anuncio">
+                <img src="img/anuncio5.jpg" alt="Casa frente al Bosque">
+                <div class="contenido-anuncio">
+                    <h3>Casa frente al Bosque</h3>
+                    <p>Casa con alberca frente al bosque, excelente oportunidad</p>
+                    <p class="precio">$3.500.000</p>
+                    <ul class="iconos-características">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>3</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="autos">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="cuartos">
+                            <p>4</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="botón botón-amarillo d-block">Ver Propiedad</a>
+
+                </div>
+            </div>
+
+            <div class="anuncio">
+                <img src="img/anuncio6.jpg" alt="Casa con Alberca">
+                <div class="contenido-anuncio">
+                    <h3>Casa con Alberca</h3>
+                    <p>Casa con alberca y acabados de lujo en la ciudad, excelente oportunidad</p>
+                    <p class="precio">$4.000.000</p>
+                    <ul class="iconos-características">
+                        <li>
+                            <img src="img/icono_wc.svg" alt="icono wc">
+                            <p>2</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_estacionamiento.svg" alt="autos">
+                            <p>5</p>
+                        </li>
+                        <li>
+                            <img src="img/icono_dormitorio.svg" alt="cuartos">
+                            <p>7</p>
+                        </li>
+                    </ul>
+
+                    <a href="anuncio.html" class="botón botón-amarillo d-block">Ver Propiedad</a>
+
+                </div>
+            </div>
+
         </div>
 
     </main>
-
-    <!-- Aquí vuelve a aplicar SECTION porque tiene nuevamente HX (un título de importancia, en este caso H2) y por ende es válido usar SECTION -->
-    <section class="imagen-contacto">
-        <div class="contenedor contenido-contacto">
-            <h2>Encuentra la casa de tus sueños</h2>
-            <p>Llena el formulario de contacto y un asesor se pondrá en contacto contigo a la brevedad</p>
-            <a href="contacto.html" class="botón botón-amarillo">Contáctanos</a>
-        </div>
-    </section>
-
-    <div class="sección-inferior contenedor sección">
-        <section class="blog">
-            <h3 class="centrar-texto fw-300">Nuestro Blog</h3>
-
-            <!-- Se usa ARTICLE comúnmente para secciones como blogs, por eso lo estamos usando aquí y se coloca para rodear la entrada de blog. Se usa también en foros, clasificados, etc... -->
-            <article class="entrada-blog">
-                <div class="imagen">
-                    <img src="img/blog1.jpg" alt="Terraza">
-                </div>
-                <div class="texto-entrada">
-                    <!-- Recordemos que para simular un enlace al clickear, usamos # en donde va el link -->
-                    <a href="entrada.html">
-                        <h4>Terraza en el techo de tu casa</h4>
-                    </a>
-                    <p>Escrito el: <span> 20/10/2019 </span> por: <span> Admin </span> </p>
-                    <!-- Se usa em | strong | b para dar un FORMATO ya sea de itálico, bold, etc... a cosas dentro de HTML pero por lo general es mejor hacer todo en CSS -->
-                    <p>Consejos para construir una terraza en el techo de tu casa, con los mejores materiales y
-                        ahorrando
-                        dinero
-                    </p>
-                </div>
-            </article>
-
-            <article class="entrada-blog">
-                <div class="imagen">
-                    <img src="img/blog2.jpg" alt="Decoración">
-                </div>
-                <div class="texto-entrada">
-                    <a href="entrada.html">
-                        <h4>Guía para la decoración de tu hogar</h4>
-                    </a>
-                    <p>Escrito el: <span> 20/10/2019 </span> por: <span> Admin </span> </p>
-                    <p>Maximiza el espacio en tu hogar con esta guía, aprende a combinar muebles y colores para
-                        darle
-                        vida a
-                        tu
-                        espacio
-                    </p>
-                </div>
-            </article>
-
-        </section>
-
-        <section class="testimoniales">
-            <h3 class="centrar-texto fw-300">Testimoniales</h3>
-            <!-- Esta etiqueta "blockquote" se usa para TESTIMONIALES para agregar las comillas -->
-            <div class="testimonial">
-                <blockquote>
-                    El personal se comportó de una excelente forma, muy buena atención y la casa que me ofrecieron
-                    cumple con
-                    todas
-                    mis espectativas.
-                </blockquote>
-                <p>- Leonardo Vasconcelos</p>
-            </div>
-        </section>
-
-    </div>
 
     <!-- Se suele usar siempre al final de la página y puede contener NAVBAR también. Se puede usar también para la misma función de ser como la parte final de una sección (se podría usar por ejemplo arriba en TESTIMONIALS donde dice mi nombre e incluir todo ese P como algo adentro de FOOTER) -->
     <footer class="site-footer sección">

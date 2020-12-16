@@ -41,7 +41,9 @@ html {
     /* Reset para REMS ya que 62.5% = 10px de 16px que vienen por defecto. Con esto hacemos que en toda la hoja HTML, 1rem equivalga a 10px y por ende sea más sencillo hacer cuentas y usar esta unidad */
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
@@ -112,13 +114,13 @@ h4 {
 }
 
 .d-block {
-    display: block!important;
+    display: block !important;
     /* Aquí agregamos al VALOR BLOCK lo de !IMPORTANT para hacerle entender que aunque el archivo CSS leerá en cascada y más abajo hay unas partes que anularían el DISPLAY: BLOCK ya que están con INLINE-BLOCK, entonces esto precisamente evita eso y le da prioridad a este. Otro dato es que si más abajo hay otro !IMPORTANT que para el la misma propiedad/valor, entonces aplicará el efecto cascada y aquel será tomado en cuenta por encima de este. Sin embargo no se sugiere usar tantas veces esto y por lo general máximo 3 veces por hoja estaría bien */
 }
 
-/* !.contenido-centrado {
+.contenido-centrado {
     max-width: 800px;
-} */
+}
 
 
 /* ?Botones */
@@ -285,10 +287,18 @@ h4 {
 .contenedor-anuncios {
     display: flex;
     justify-content: space-between;
+    /* Aquí al este ser el padre de los anuncios, cuando agregamos 6 se pusieron todos en fila con un scroll bar horizontal. Procedemos a usar FLEX-WRAP que por defecto el valor viene como NOWRAP pero nosotros le indicaremos WRAP para que así todos esos anuncions que son hijos de este elemento, se organicen hacia abajo */
+    flex-wrap: wrap;
 }
 
 .anuncio {
+    /* FLEX-SHRINK sirve porque por ejemplo en la página anuncions.html copiamos del index.html los nuncios de las 3 casas pero esta vez queremos mostrar 6 anuncions y al agregarlos se encogieron de forma a encajar dentro del mismo contenido o elemento que los posee. Por eso creamos esta propiedad que por defecto tendría un 1 como valor, pero al colocar 0 indicamos que no queremos que encoja y que mantenga los mismos tamaños que tenía cuando eran solo 3 anuncios */
+    flex-shrink: 0;
+    /* DATO: Existe también la propiedad FLEX-GROW que a diferencia de SHRINK, en lugar de encoger hace que crezcan */
     flex-basis: calc(33.3% - 1rem);
+    /* También podemos ahorrar el uso 3 propiedades (GROW, SHRINK y BASIS) y se haría con "flex: X X X;". Por ejemplo lo de arriba quedaría así:display: display: 
+        flex: 0 0 calc(33.3% - 1rem);
+    */
     border: 1px solid #5b5b5b;
     /* La propiedad BORDER de arriba escrita de esa forma sería como escribir estas 3 propiedades: 
         border-style: solid;
@@ -296,6 +306,8 @@ h4 {
         border-width: 1px;    
     */
     background-color: #f5f5f5;
+    /* Agregamos este margen hacia abajo en los anuncios para que los 3 que agregamos se separen de los 3 que aparecen arriba */
+    margin-bottom: 2rem;
 }
 
 .contenido-anuncio {
@@ -314,7 +326,8 @@ h4 {
 }
 
 /* En la siguiente línea estaremos juntando clases y selectores para evitar escribir tantas líneas de código. Estos se pueden separar con una COMA y se pueden escribir en la misma línea o en la línea que sigue según preferencias */
-.contenido-anuncio h3, .contenido-anuncio p {
+.contenido-anuncio h3,
+.contenido-anuncio p {
     margin: 0;
 }
 
@@ -329,6 +342,8 @@ h4 {
     padding: 0;
     display: flex;
     justify-content: space-evenly;
+    flex: 1;
+    max-width: 500px;
 }
 
 .iconos-características li {
@@ -473,4 +488,34 @@ h4 {
 .copyright {
     margin: 0;
     color: #ffffff;
+}
+
+
+/* ?INTERNOS */
+
+/* ?Nosotros */
+.contenido-nosotros {
+    /* Aquí empezamos a usar GRID que es con lo que sumado a FLEX podemos manipular de mejor manera cada cosa en nuestras páginas. Con esto activamos el GRID */
+    display: grid;
+    /* Aquí procedemos a especificar cuántas columnas se quiere, podría haber colocado 1fr 1fr en el valor y es lo mismo a lo que coloqué abajo como se verá a continuación */
+    grid-template-columns: repeat(2, 1fr);
+    /* Por lo general para cada tipo de contenido se puede revisar cuántos elementos HIJO haay y de ahí saber cuántas columnas debemos definir */
+    /* Usamos la unidad FR que se refiere a FRACCIÓN. Al decir que serán 1fr y 1fr da a entender que hay un total de 2fr y que cada columna abarcará 1 y 1. Pero aquí también pudimos usar 50% y 50% obteniendo el mismo resultado */
+    grid-column-gap: 2rem;
+    /* Con esta propiedad de arriba y el valor, le indicamos la separación que habrá entre las columnas */
+}
+
+.texto-nosotros blockquote {
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 0;
+    padding: 1rem 0 3rem 0;
+    /* Recordemos aquí que estos valores del PADDING corresponden a TOP, RIGHT, BOTTOM y LEFT */
+}
+
+/* ?Anuncio */
+.resumen-propiedad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

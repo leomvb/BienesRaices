@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bienes Raices</title>
+
+    <!-- DATO: STYLE se usaba antiguamente y se puede dar formato pero el problema es habría que hacer todo el trabajo por cada HTML que se tenga, entonces es duplicar trabajo innecesariamente pudiendo hacer todo por CSS y así reflejará los cambios en todas las páginas en la que los elementos estén
+    
+        <style>
+        h1 {
+            color: blue;
+        }
+    </style> -->
+
+    <!-- En https://fonts.google.com/ puedo buscar más de 1000 tipos de fuentes de manera completamente gratis en caso de no querer usar las que vengan aquí y simplemente he de linkear la fuente -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Esta es una librería que descargué de https://necolas.github.io/normalize.css/8.0.1/normalize.css la cual permite normalizar los tamaños y todo en distintos dispositivos, esa hoja CSS la copié y pegué en el archivo que linkee y listo -->
+    <link rel="stylesheet" href="./css/normalize.css">
+
+    <!-- Siempre debemos poner de último nuestra hoja de style.css para que sea lo último y definitivo que tome en cuenta dando prioridad a la misma por encima de las demás hojas vinculadas -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Por lo general el HEADER suele usarse donde está la NAVBAR -->
+    <!-- El ID funciona como CLASS pero este es único y no puede o debería usarse en varias cosas a la vez -->
+    <header class="site-header">
+
+        <!-- Creamos un DIV con CLASS CONTAINER para que podamos agarrar todo el contenido del HEADER y buscar centrarlo -->
+        <!-- A diferencia del ID, CLASS sí se puede utilizar de forma repetida con el mismo nombre -->
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="index.html">
+                    <img class="logo" src="img/logo.svg" alt="Logotipo de Bienes Raices">
+                </a>
+
+                <!-- NAVBAR que es para hacer menús de navegación -->
+                <nav class="navegación">
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="anuncios.html">Anuncios</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contacto</a>
+                    <!-- Por defecto sin agregar el target viene invisiblemente así: target="self" y hace que abra en la misma página -->
+                    <!-- Se puede agregar target="_blank" a los enlaces (a) y eso hace que al abrir esos enlaces, los abre en una nueva pestaña -->
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Aquí volvemos a usar MAIN que como ya dijimos antes se usa para dar enfoque al objetivo/contenido principal de la página y solo se debe usar 1 vez por hoja/documento -->
+    <main class="contenedor">
+
+        <h1 class="fw-300 centrar-texto">Conoce Sobre Nosotros</h1>
+
+        <div class="contenido-nosotros">
+
+            <div class="imagen">
+                <img src="img/nosotros.jpg" alt="Imagen Sobre Nosotros">
+            </div>
+
+            <div class="texto-nosotros">
+
+                <blockquote>25 Años de Experiencia</blockquote>
+
+                <p>Donec vitae efficitur mi, nec rutrum dolor. Vestibulum id libero euismod, tempor lectus nec,
+                    condimentum elit. Praesent non dolor et est tincidunt placerat. Aenean posuere enim quis lorem
+                    suscipit, non porttitor diam facilisis. Integer eget purus sit amet arcu aliquet efficitur ac sed
+                    ex. Praesent porta elit a velit placerat, sagittis aliquet libero malesuada. Maecenas eros neque,
+                    dignissim sed tortor ut, scelerisque vehicula tortor. Maecenas sodales pharetra augue, et molestie
+                    risus mollis sit amet. Curabitur vel euismod purus, quis placerat quam. Phasellus hendrerit neque ut
+                    sem consequat gravida. <br><br> Etiam quis cursus erat, vitae sodales felis. Praesent et elementum dolor, sed
+                    ornare nisi. Etiam faucibus justo at ipsum congue, a suscipit mi varius. Aliquam purus dui,
+                    pellentesque ac lacinia vel, egestas sit amet erat. Orci varius natoque penatibus et magnis dis
+                    parturient montes, nascetur ridiculus mus.</p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <section class="contenedor sección">
+
+        <h2 class="fw-300 centrar-texto">Más Sobre Nosotros</h2>
+
+        <!-- Luego se usa BASTANTE el DIV para no repetir de forma errónea los SECTION y básicamente con DIV podemos dividir partes dentro de otra parte que en este caso sería la sección -->
+        <div class="iconos-nosotros">
+            <!-- Creamos esta clase de arriba para poder aplicar un FLEXBOX a todos los hijos de abajo y empzar a modificar esta sección de la página -->
+            <div class="icono">
+                <!-- Aquí también creamos una clase, seleccionando <div> y luego presionando CTRL + D para seleccionar todos y procedemos a mover con las flechas y escribir la clase -->
+                <img src="img/icono1.svg" alt="Seguridad">
+                <h3>Seguridad</h3>
+                <p>Dolor sit amet consectetur adipisicing elit. Magnam enim reprehenderit quasi eaque, perferendis
+                    consectetur
+                    harum
+                    quae! Quae omnis natus quo dolorem illo blanditiis non. Illum, modi? Eaque, laboriosam iusto?</p>
+            </div>
+
+            <div class="icono">
+                <img src="img/icono2.svg" alt="Precio">
+                <h3>El Mejor Precio</h3>
+                <p>Dolor sit amet consectetur adipisicing elit. Ipsa mollitia totam voluptas eum alias, vero ut
+                    molestiae
+                    exercitationem quae deleniti dolor, delectus beatae nisi atque dolorum illo aperiam non consequatur.
+                </p>
+            </div>
+
+            <div class="icono">
+                <img src="img/icono3.svg" alt="Tiempo">
+                <h3>A Tiempo</h3>
+                <p>Dolor sit amet consectetur adipisicing elit. Iure, nulla obcaecati quam magnam debitis sit et sed
+                    dicta,
+                    facilis
+                    velit fugit fugiat nisi enim cumque. Quam suscipit magni tempora culpa.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Se suele usar siempre al final de la página y puede contener NAVBAR también. Se puede usar también para la misma función de ser como la parte final de una sección (se podría usar por ejemplo arriba en TESTIMONIALS donde dice mi nombre e incluir todo ese P como algo adentro de FOOTER) -->
+    <footer class="site-footer sección">
+        <div class="contenedor contenedor-footer">
+            <nav class="navegación">
+                <a href="nosotros.html">Nosotros</a>
+                <a href="anuncios.html">Anuncios</a>
+                <a href="blog.html">Blog</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <p class="copyright">Todos los Derechos Reservados 2020 &copy;</p>
+            <!-- Se usa &copy porque es una forma de poner una ENTIDAD que es como un atajo para poner símbolos en HTML -->
+        </div>
+    </footer>
+
+</body>
+
+</html>

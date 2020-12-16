@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bienes Raices</title>
+
+    <!-- DATO: STYLE se usaba antiguamente y se puede dar formato pero el problema es habría que hacer todo el trabajo por cada HTML que se tenga, entonces es duplicar trabajo innecesariamente pudiendo hacer todo por CSS y así reflejará los cambios en todas las páginas en la que los elementos estén
+    
+        <style>
+        h1 {
+            color: blue;
+        }
+    </style> -->
+
+    <!-- En https://fonts.google.com/ puedo buscar más de 1000 tipos de fuentes de manera completamente gratis en caso de no querer usar las que vengan aquí y simplemente he de linkear la fuente -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Esta es una librería que descargué de https://necolas.github.io/normalize.css/8.0.1/normalize.css la cual permite normalizar los tamaños y todo en distintos dispositivos, esa hoja CSS la copié y pegué en el archivo que linkee y listo -->
+    <link rel="stylesheet" href="./css/normalize.css">
+
+    <!-- Siempre debemos poner de último nuestra hoja de style.css para que sea lo último y definitivo que tome en cuenta dando prioridad a la misma por encima de las demás hojas vinculadas -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Por lo general el HEADER suele usarse donde está la NAVBAR -->
+    <!-- El ID funciona como CLASS pero este es único y no puede o debería usarse en varias cosas a la vez -->
+    <header class="site-header">
+
+        <!-- Creamos un DIV con CLASS CONTAINER para que podamos agarrar todo el contenido del HEADER y buscar centrarlo -->
+        <!-- A diferencia del ID, CLASS sí se puede utilizar de forma repetida con el mismo nombre -->
+        <div class="contenedor contenido-header">
+            <div class="barra">
+                <a href="index.html">
+                    <img class="logo" src="img/logo.svg" alt="Logotipo de Bienes Raices">
+                </a>
+
+                <!-- NAVBAR que es para hacer menús de navegación -->
+                <nav class="navegación">
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="anuncios.html">Anuncios</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contacto.html">Contacto</a>
+                    <!-- Por defecto sin agregar el target viene invisiblemente así: target="self" y hace que abra en la misma página -->
+                    <!-- Se puede agregar target="_blank" a los enlaces (a) y eso hace que al abrir esos enlaces, los abre en una nueva pestaña -->
+                </nav>
+            </div>
+        </div>
+
+    </header>
+
+    <h1 class="fw-300 centrar-texto">Contacto</h1>
+
+    <img src="img/destacada3.jpg" alt="Imagen Principal">
+
+    <main class="contenedor sección contenido-centrado">
+        <h2 class="fw-300 centrar-texto">Llena el formulario de Contacto</h2>
+    </main>
+
+    <!-- Se suele usar siempre al final de la página y puede contener NAVBAR también. Se puede usar también para la misma función de ser como la parte final de una sección (se podría usar por ejemplo arriba en TESTIMONIALS donde dice mi nombre e incluir todo ese P como algo adentro de FOOTER) -->
+    <footer class="site-footer sección">
+        <div class="contenedor contenedor-footer">
+            <nav class="navegación">
+                <a href="nosotros.html">Nosotros</a>
+                <a href="anuncios.html">Anuncios</a>
+                <a href="blog.html">Blog</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <p class="copyright">Todos los Derechos Reservados 2020 &copy;</p>
+            <!-- Se usa &copy porque es una forma de poner una ENTIDAD que es como un atajo para poner símbolos en HTML -->
+        </div>
+    </footer>
+
+</body>
+
+</html>
