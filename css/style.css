@@ -452,6 +452,7 @@ h4 {
 
 .testimonial p {
     text-align: right;
+    font-size: 2rem;
 }
 
 .testimonial blockquote::before {
