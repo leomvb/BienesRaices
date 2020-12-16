@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Bienes Raices</title>
+    <title>Bienes Raices - Contacto - Formulario</title>
 
     <!-- DATO: STYLE se usaba antiguamente y se puede dar formato pero el problema es habría que hacer todo el trabajo por cada HTML que se tenga, entonces es duplicar trabajo innecesariamente pudiendo hacer todo por CSS y así reflejará los cambios en todas las páginas en la que los elementos estén
     
@@ -62,7 +62,30 @@
     <img src="img/destacada3.jpg" alt="Imagen Principal">
 
     <main class="contenedor sección contenido-centrado">
+        
         <h2 class="fw-300 centrar-texto">Llena el formulario de Contacto</h2>
+
+        <!-- Procedemos a crear el formulario en HTML y para eso se usa la etiqueta FORM -->
+        <form action="">
+
+            <!-- Ahora empezamos a hacer el formulario y usamos LABEL para empezar a agregar las casillas donde se solicitará la información -->
+            <!-- En la parte de "FORM" es donde se indica algo para relacionar este LABEL a la casilla donde el usuario pedirá texto, que en ese caso será ID y se verá más abajo -->
+            <label form="nombre">Nombre:</label>
+            <!-- Luego agregamos la casilla donde introducirá la información el usuario y aesta le indicamos qué tipo de información tendrá. Por defecto viene en TYPE="TEXT" -->
+            <input type="text" id="nombre" placeholder="Tu nombre">
+            <!-- Como ya habíamos mencionado arriba, agregamos el ID para hacerle entender al formulario que aquel LABEL está de algún modo enlazado hacia este campo de texto -->
+            <!-- Al hacer uso de FORM en LABEL e ID en INPUT, cuando el usuario clickea en "NOMBRE" automáticamente se seleccionará la casilla donde debe escribir -->
+            <!-- Cuando indicamos en INPUT un PLACEHOLDER="Tu Nombre" hará que automáticamente aparezca eso en la casilla, en este caso diciendo "Tu Nombre". Esto básicamente se usa como sugerencias hacia los usuarios para saber cómo llenar cada campo -->
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="Tu correo electrónico" required>
+            <!-- Aquí cambiamos el valor de TYPE a "EMAIL" porque es lo que se adecúa al tipo de casilla que estamos usando e información que estamos pidiendo, además que eso ayudará a validar que sea una dirección correcta (que contenga un @) -->
+            <!-- También podemos usar en los INPUT lo siguiente para requerir esos datos obligatoriamente: REQUIRED , así de esta manera cuando presionemos el botón de submit que creamos más abajo, verá si en este campo se ingresó lo que se pedía -->
+
+            <input type="submit">
+
+        </form>
+
     </main>
 
     <!-- Se suele usar siempre al final de la página y puede contener NAVBAR también. Se puede usar también para la misma función de ser como la parte final de una sección (se podría usar por ejemplo arriba en TESTIMONIALS donde dice mi nombre e incluir todo ese P como algo adentro de FOOTER) -->
