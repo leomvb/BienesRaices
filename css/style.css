@@ -136,6 +136,7 @@ h4 {
     display: inline-block;
     /* Esta propiedad la agregamos porque viene por defecto con valor INLINE y por lo general a los enlaces (en este caso A) no les afecta si cambiamos el WIDTH o MARGINs, por eso hemos de usar BLOCK para quitar eso y que ya aplique. Sin embargo en este caso vamos a poner INLINE-BLOCK para que el elemento no tome todo el espacio disponible */
     text-align: center;
+    /* Aquí a continuación quitamos el borde dado que esta clase la comenzamos a usar en el formulario para el botón de ENVIAR y por defecto en los formularios esos botones traen borde, entonces dado que le habíamos asignado esta clase de BOTÓN, vinimos aquí a quitar el borde */
     border: none;
     border-radius: 3rem;
     /* !display: block;
@@ -155,6 +156,8 @@ h4 {
 .botón:hover {
     transform: scale(1.05);
     transition: 0.5s;
+    /* Ahora agregaremos también CURSOR: POINTER; para hacer que cuando se pase mouse por el botón, se vea la manito */
+    cursor: pointer;
 }
 
 .botón-amarillo {
@@ -524,6 +527,66 @@ h4 {
 
 /* ?Contacto */
 
+.contacto p {
+    /* font-size: 1.2rem; */
+    color: #4f4f4f;
+    margin: 2rem 0 0 0;
+}
+
+legend {
+    font-size: 2rem;
+    color: #333333;
+}
+
 label {
+    font-weight: 700;
+    text-transform: uppercase;
     display: block;
+}
+
+/* A continuación podemos usar un SELECTOR DE ATRIBUTOS que puede indicar mediante TYPE / NAME / ID las cosas a las que queremos dar estos formatos. Se hace de la siguiente manera: 
+    input[type="text"] {
+        background-color: white;
+    }
+    De esta forma estaríamos indicando que los campos que sean de TYPE TEXT, lleven este formato
+*/
+/* También para no tener que repetir código agregaríamos COMAS para poder poner más condiciones, por ejemplo: 
+    input[type="text"], [type="email"] {
+    padding: 1rem;
+    }
+*/
+/* Pero, en este caso haremos uso de otra cuestión ya que nos interesa que tome en cuenta todos los INPUT excepto algunos y para eso usamos lo siguiente */
+input:not([type="submit"]), 
+textarea, 
+select {
+    /* Como dijimos en el comentario de arriba, de esta forma pudimos seleccionar todos los INPUT excepto el SUBMIT que viene siendo el botón de ENVIAR. También pusimos COMA para aplicar todo esto al área de MENSAJE que es TEXTAREA */
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+select {
+    -webkit-appearance: none;
+    /* Usamos esto para poder aplicar las propiedades de arriba ya que si no ponemos esto no tomará en cuenta las propiedades como el PADDING por ejemplo ya que solo funcionaba el BACKGROUN-COLOR */
+    appearance: none;
+}
+
+textarea {
+    height: 20rem;
+}
+
+.forma-contacto {
+    max-width: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
