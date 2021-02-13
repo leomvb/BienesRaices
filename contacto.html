@@ -43,8 +43,14 @@
                     <img class="logo" src="img/logo.svg" alt="Logotipo de Bienes Raices">
                 </a>
 
+                <div class="mobile-menu">
+                    <a href="#navegación">
+                        <img src="img/barras.svg" alt="Icono Menú">
+                    </a>
+                </div>
+
                 <!-- NAVBAR que es para hacer menús de navegación -->
-                <nav class="navegación">
+                <nav id="navegación" class="navegación">
                     <a href="nosotros.html">Nosotros</a>
                     <a href="anuncios.html">Anuncios</a>
                     <a href="blog.html">Blog</a>
@@ -134,7 +140,7 @@
                 <p>¿Cómo desea ser contactado? </p>
 
                 <div class="forma-contacto">
-                    
+
                     <label for="teléfono">Teléfono</label>
                     <!-- Ahora pretendemos agregar unas opciones seleccionables y para eso usaremos TYPE RADIO -->
                     <input type="radio" id="teléfono" value="teléfono" name="contacto">
@@ -143,7 +149,7 @@
                     <input type="radio" id="correo" value="email" name="contacto">
                     <!-- En este caso podíamos usar en TYPE y ID el valor EMAIL que usamos más arriba pero tenemos que recordar que los ID no debemos repetirlos en un mismo documento, por eso en este caso usamos otra palabra. Esto porque si a futuro estos datos fuesen enviados al back-end, estaría recibiendo 2 datos de emails que no sabría validar (el de más arriba y el de aquí) -->
                     <!-- Por defecto al agregar opciones de RADIO en INPUT, la página permitirá seleccionar más de 1 pero si queremos que sea única la selección entonces tenemos que agregarles NAME="x" donde X ha de ser el mismo nombre para que se relacionen entre ellos -->
-                    
+
                 </div>
 
                 <p>Si eligió teléfono, elija la fecha y hora: </p>
