@@ -1,11 +1,15 @@
 /* Estas hojas de CSS se leen en cascada, de arriba hacia abajo y el último selector/última propiedad y valor son los que aplican en caso de ser repetidos */
 
+
 /* H1 es el SELECTOR, osea, el ELEMENTO al que se le pretende aplicar lo que viene siendo el CSS */
+
+
 /* h1 {
     Aquí, COLOR vendría siendo la propiedad del CSS. Estas usualmente son definidas por CSS. Osea, existe propiedades para colocar un color de fondo, para agregar espacio, hacer la fuente más grande, etc... Luego, viene el VALOR que en este caso sería BLUE
 color: white;
 font-size: 16px;
 } */
+
 
 /* También se puede escribir de forma corrida cada propiedad y valor siempre y cuando se cumpla con finalizar con ; pero ya depende de gustos y la mayoría lo hace en cada línea
 
@@ -13,13 +17,14 @@ h1 {
 color: white; font-size: 16px;
 } */
 
+
 /* h1 {
 color: black;
 font-size: 28px;
 } */
 
-/* Cuando se agrega una clase y se deja un espacio, por ejemplo: class="encabezado mayuscula", si en CSS hay un .encabezado {... y también un .mayuscula {... tomará las propiedades de ambos, osea, se puede asignar varias clases en algo al dejar espacios entre ellas en el HTML pero aquí deben ir separados */
 
+/* Cuando se agrega una clase y se deja un espacio, por ejemplo: class="encabezado mayuscula", si en CSS hay un .encabezado {... y también un .mayuscula {... tomará las propiedades de ambos, osea, se puede asignar varias clases en algo al dejar espacios entre ellas en el HTML pero aquí deben ir separados */
 
 
 /* ?SNIPPET de desarrollador de GOOGLE para evitar que PADDING cambie tamaños de otras cosas que también tengan valores en px: 
@@ -30,7 +35,6 @@ font-size: 28px;
         box-sizing: inherit;
     } 
 Ignorar el / que está arriba antes de * */
-
 
 
 /* ?COMIENZO REAL DEL CSS */
@@ -56,15 +60,18 @@ body {
     /* Usamos esto para separar un poco los espacios entre líneas de textos en todo el BODY */
 }
 
+
 /* ?Globales */
 
+
 /* Aquí asignamos para que todas las imágenes adquieran un ancho máximo del 100% para hacerlas responsivas ya que se supone se adaptarán al máximo ancho de sus boxes/contenedores o donde estén metidas */
+
 img {
     max-width: 100%;
 }
 
 .contenedor {
-    /* !width: 95%; */
+    width: 95%;
     max-width: 120rem;
     /* La medida de PX no suele ser la mejor opción porque a la hora de verse la página en distintos dispositivos puede ser problemático, por ende se suele usar más EM o inclusive más aún REM. Dado que cambiamos arriba en HTML font-size a 10px (por defecto son 16px), esto hace que sea más sencillo usar REM ya que ahora 1rem = 10px, por ende teníamos max-width 1200px y ahora pusimos 120rem que es lo mismo */
     margin: 0 auto 0 auto;
@@ -76,7 +83,9 @@ img {
     transform: scale(1.2);
 }
 
+
 /* Es bueno que cuando se haga un proyecto, se asigne anticipadamente un sistema de tamaños de fuentes. Esto se hace para evitar problemas a futuro de que un párrafo tenga tamaños indebidos respecto a un h1, etc... Es lo que haremos a continuación */
+
 h1 {
     font-size: 3.8rem;
 }
@@ -93,6 +102,7 @@ h4 {
     font-size: 2.6rem;
 }
 
+
 /* En este caso asignamos que los encabezados vayan teniendo una diferencia de 0.4rem entre ellos de forma as/descendiente como se quiera ver */
 
 
@@ -103,7 +113,9 @@ h4 {
     margin-bottom: 2rem;
 }
 
+
 /* Aquí creamos nuestras propias utilidades para así poder rápidamente aplicar ciertas propiedades y valores a cosas en el futuro. En este caso estamos creando líbremente "fw-300" que lo nombramos así para saber identificar que ese cambia el tamaño de fuente o groso a 300 y luego hacemos otro que sea para centrar y le pusimos por ejemplo "centrar-texto". Ya después tan solo nos queda usar ambos selectores que creamos en cada situación que necesitemos que el texto tenga esas propiedades */
+
 .fw-300 {
     font-weight: 300;
     /* Aquí estamos asignando ese valor de 300 pero tenemos que tener en ccuenta que nosotros habíamos subido unas fuentes de Google donde elegímos usar 300, 400, 700 y 900. Si no hubiésemos subido la de 300, no podríamos usar el valor en este caso ya que no tendría de dónde tomar en cuenta ese valor para saber qué tamaño aplicar */
@@ -139,20 +151,22 @@ h4 {
     /* Aquí a continuación quitamos el borde dado que esta clase la comenzamos a usar en el formulario para el botón de ENVIAR y por defecto en los formularios esos botones traen borde, entonces dado que le habíamos asignado esta clase de BOTÓN, vinimos aquí a quitar el borde */
     border: none;
     border-radius: 3rem;
-    /* !display: block;
-!    flex: 0 0 100%; */
+    display: block;
+    flex: 0 0 100%;
     transition: all .2s ease-in-out;
     /* !Agregué estas últimas 2 propiedades de forma persona para darle forma redonda a los botones y agregar un efecto de zoom in y out */
 }
 
-/* !@media (min-width: 768px) {
-!    .botón {
-!        display: inline-block;
-!        flex: 0 0 auto;
-!    }
-!} */
+@media (min-width: 768px) {
+    .botón {
+        display: inline-block;
+        flex: 0 0 auto;
+    }
+}
+
 
 /* !Lo que sigue también lo agregué de forma personal */
+
 .botón:hover {
     transform: scale(1.05);
     transition: 0.5s;
@@ -176,7 +190,9 @@ h4 {
     padding: 1rem 0 3rem 0;
 }
 
+
 /* Se puede agregar ambas clases (.site-header) e (.inicio) poniendo ese punto, aunque también se podría con espacio enter header e inicio */
+
 .site-header.inicio {
     background-image: url(../img/header.jpg);
     /* Como este archivo CSS está en una carpeta y la imagen que buscamos está afuera de esa carpeta en otra carpeta, hay que poner 2 puntos para salir de donde estamos y la ruta ya detectará los archivos de esa carpeta exterior */
@@ -201,13 +217,15 @@ h4 {
     text-align: center;
 }
 
-/* !@media (min-width: 768px) {
-!    .contenido-header{
-!        text-align: left;
-!    }
-!} */
+@media (min-width: 768px) {
+    .contenido-header {
+        text-align: left;
+    }
+}
+
 
 /* Ahora dado que el título H1 de "VENTAS..." no se ve, procedemos a seleccionar el H1 que está dentro de esta clase para cambiar su formato. Además especificamos así porque tendremos más H1s por página y queremos solamente afectar a este que está en el HEADER por ahora */
+
 .contenido-header h1 {
     color: #ffffff;
     padding-bottom: 2rem;
@@ -219,66 +237,88 @@ h4 {
 }
 
 .barra {
-    display: flex;
+    /* display: flex; */
     /* Con esta propiedad y valor se activa FLEXBOX en el elemento de la clase de barra */
-    justify-content: space-between;
+    /* justify-content: space-between; */
     /* JUSTIFY-CONTENT es para alinear horizontalmente */
-    align-items: center;
+    /* align-items: center; */
     /* El ALIGN-ITEMS es para alinear verticalmente */
     /* NOTA IMPORTANTE: Para los casos de arriba si se cambiara flex-direction: column, esto haría que se invirtiera y por ende lo que antes servía paara alinear horizontalmente, lo hará verticalmente y viceversa */
     padding-top: 3rem;
     /* PADDING-TOP significa como espacio hacia dentro del elemento mientras que el MARGIN es la separación con otro elemento hacia afuera */
 }
 
-/* !@media (min-width: 768px) {
-!    .barra {
-!        display: flex;
-!        justify-content: space-between;
-!        align-items: center;
-!    }
-!} */
+@media (min-width: 768px) {
+    .barra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
 
 /* ?Navegación */
 
+
 /* Aquí queremos decir que los elementos A que sean hijos de la clase NAVEGACIÓN tendrán estos atributos */
+
 .navegación a {
     color: rgba(255, 255, 255, 1);
     /* Al usar RGBA para la propiedad COLOR, el último valor es la transparencia por lo que puede ser útil en muchas ocasiones */
     text-decoration: none;
     font-size: 2.2rem;
     /* Aquí pasamos a usar unidad REM en vez de los 18px que estaban, pero dado que arriba en HTML cambiamos font-size a 10px cuando por defecto viene en 16px, ahora hace que cada REM sea equivalente a 1px para ser más fácil de sacar cuentas. Por ende 1.8rem = 18px que era lo que estaba fijado antes */
-    /* !display: block; */
-    margin-right: 2rem;
+    display: block;
 }
 
+@media (min-width: 768px) {
+    .navegación a {
+        display: inline-block;
+        font-size: 1.8rem;
+        margin-right: 2rem;
+    }
+    .navegación a:last-of-type {
+        margin: 0;
+    }
+}
+
+
 /* El HOVER en este caso es un SEUDO SELECTOR y desempeñan alguna función que en este caso hace que se produzca algún tipo de reacción/animación al pasar el mouse encima del elemento, que en este caso son los menús de Nosotros, Anuncions, Blogs, Contacto */
+
 .navegación a:hover {
     color: #71b100;
     transition: 0.5s;
 }
 
+
 /* El LAST-OF-TYPE hace que el último elemento A no tenga margen que en este caso sería la palabra CONTACTO de toda la NAV */
-.navegación a:last-of-type {
-    margin: 0;
-}
 
 
 /* ?Iconos Nosotros */
 
-.iconos-nosotros {
-    display: flex;
-    justify-content: space-between;
+@media (min-width: 768px) {
+    .iconos-nosotros {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .icono {
-    flex-basis: calc(33.3% - 1rem);
-    /* Se usa FLEX-BASIS como si fuera WIDHT ya que es lo que se tiene que usar cuando estamos en FLEX y por lo general el valor se asigna en % */
-    /* Y se usa CALC para hacer cualquier operación matemática que en este caso estamos indicando que el tamaño sea de 33.3% menos 1rem o 10px de esta forma nos evitamos tener que calcular nosotros cuánto es en % ese REM o esos 10px */
     text-align: center;
     /* Esta es una de las formas fáciles de centrar. Aquí tanto las imágenes como los párrafos son hijos de la clase ICONO, por eso les aplica el formato y los centra que es lo que queríamos */
 }
 
+@media (min-width: 768px) {
+    .icono {
+        flex-basis: calc(33.3% - 1rem);
+        /* Se usa FLEX-BASIS como si fuera WIDHT ya que es lo que se tiene que usar cuando estamos en FLEX y por lo general el valor se asigna en % */
+        /* Y se usa CALC para hacer cualquier operación matemática que en este caso estamos indicando que el tamaño sea de 33.3% menos 1rem o 10px de esta forma nos evitamos tener que calcular nosotros cuánto es en % ese REM o esos 10px */
+    }
+}
+
+
 /* Aquí vamos a darle formato a los H3 que son hijos directos de esta clase ICONO */
+
 .icono h3 {
     text-transform: uppercase;
     /* Aquí estamos indicando que ponga en MAYÚSCULAS esos títulos H3 */
@@ -287,21 +327,19 @@ h4 {
 
 /* ?Anuncios */
 
-.contenedor-anuncios {
-    display: flex;
-    justify-content: space-between;
-    /* Aquí al este ser el padre de los anuncios, cuando agregamos 6 se pusieron todos en fila con un scroll bar horizontal. Procedemos a usar FLEX-WRAP que por defecto el valor viene como NOWRAP pero nosotros le indicaremos WRAP para que así todos esos anuncions que son hijos de este elemento, se organicen hacia abajo */
-    flex-wrap: wrap;
+@media (min-width: 768px) {
+    .contenedor-anuncios {
+        display: flex;
+        justify-content: space-between;
+        /* Aquí al este ser el padre de los anuncios, cuando agregamos 6 se pusieron todos en fila con un scroll bar horizontal. Procedemos a usar FLEX-WRAP que por defecto el valor viene como NOWRAP pero nosotros le indicaremos WRAP para que así todos esos anuncions que son hijos de este elemento, se organicen hacia abajo */
+        flex-wrap: wrap;
+    }
 }
 
 .anuncio {
     /* FLEX-SHRINK sirve porque por ejemplo en la página anuncions.html copiamos del index.html los nuncios de las 3 casas pero esta vez queremos mostrar 6 anuncions y al agregarlos se encogieron de forma a encajar dentro del mismo contenido o elemento que los posee. Por eso creamos esta propiedad que por defecto tendría un 1 como valor, pero al colocar 0 indicamos que no queremos que encoja y que mantenga los mismos tamaños que tenía cuando eran solo 3 anuncios */
     flex-shrink: 0;
     /* DATO: Existe también la propiedad FLEX-GROW que a diferencia de SHRINK, en lugar de encoger hace que crezcan */
-    flex-basis: calc(33.3% - 1rem);
-    /* También podemos ahorrar el uso 3 propiedades (GROW, SHRINK y BASIS) y se haría con "flex: X X X;". Por ejemplo lo de arriba quedaría así:display: display: 
-        flex: 0 0 calc(33.3% - 1rem);
-    */
     border: 1px solid #5b5b5b;
     /* La propiedad BORDER de arriba escrita de esa forma sería como escribir estas 3 propiedades: 
         border-style: solid;
@@ -311,6 +349,15 @@ h4 {
     background-color: #f5f5f5;
     /* Agregamos este margen hacia abajo en los anuncios para que los 3 que agregamos se separen de los 3 que aparecen arriba */
     margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .anuncio {
+        flex-basis: calc(33.3% - 1rem);
+        /* También podemos ahorrar el uso 3 propiedades (GROW, SHRINK y BASIS) y se haría con "flex: X X X;". Por ejemplo lo de arriba quedaría así:display: display: 
+        flex: 0 0 calc(33.3% - 1rem);
+    */
+    }
 }
 
 .contenido-anuncio {
@@ -328,7 +375,9 @@ h4 {
     */
 }
 
+
 /* En la siguiente línea estaremos juntando clases y selectores para evitar escribir tantas líneas de código. Estos se pueden separar con una COMA y se pueden escribir en la misma línea o en la línea que sigue según preferencias */
+
 .contenido-anuncio h3,
 .contenido-anuncio p {
     margin: 0;
@@ -375,7 +424,7 @@ h4 {
 }
 
 .contenido-contacto {
-    flex: 1;
+    flex: 0 0 95%;
     /* FLEX 1 se le conoce como factor de crecimiento. Lo que hace es detectar cuánto tamaño hay disponible al igual que cuántos elementos hay y realiza la división donde por ejemplo si hay 1000px y solamente hay un elemento divide 1000px entre 1 y le asigna el tamaño de 1000px a ese elemento. Si hubiera 2 elementos, le asignaría 500 a cada uno */
     color: #ffffff;
 }
@@ -387,35 +436,41 @@ h4 {
 
 /* ?Sección Inferior */
 
-.sección-inferior {
-    display: flex;
-    justify-content: space-between;
-}
-
-.sección-inferior .blog {
-    flex-basis: 60%;
-}
-
-.sección-inferior .testimoniales {
-    flex-basis: calc(40% - 2rem);
+@media (min-width: 768px) {
+    .sección-inferior {
+        display: flex;
+        justify-content: space-between;
+    }
+    .sección-inferior .blog {
+        flex-basis: 60%;
+    }
+    .sección-inferior .testimoniales {
+        flex-basis: calc(40% - 2rem);
+    }
 }
 
 .entrada-blog {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .entrada-blog {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .entrada-blog:last-of-type {
     margin-bottom: 0;
 }
 
-.entrada-blog .imagen {
-    flex-basis: 40%;
-}
-
-.entrada-blog .texto-entrada {
-    flex-basis: calc(60% - 3rem);
+@media (min-width: 768px) {
+    .entrada-blog .imagen {
+        flex-basis: 40%;
+    }
+    .entrada-blog .texto-entrada {
+        flex-basis: calc(60% - 3rem);
+    }
 }
 
 .texto-entrada a {
@@ -428,7 +483,9 @@ h4 {
     line-height: 1.4;
 }
 
+
 /* Esto que vemos a continuación se le conoce como SEUDO SELECTOR y lo que hace es indicar "crea un elemento después del H4" y en este caso lo usaremos para crear una línea que vimos que hacía falta en esta parte de la página justo después del título H4 y antes del P que sigue abajo */
+
 .texto-entrada h4::after {
     content: '';
     display: block;
@@ -485,8 +542,24 @@ h4 {
 
 .contenedor-footer {
     padding: 3rem 0;
-    display: flex;
-    justify-content: space-between;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .contenedor-footer {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.site-footer nav {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .site-footer nav {
+        display: block;
+    }
 }
 
 .copyright {
@@ -497,16 +570,20 @@ h4 {
 
 /* ?INTERNOS */
 
+
 /* ?Nosotros */
-.contenido-nosotros {
-    /* Aquí empezamos a usar GRID que es con lo que sumado a FLEX podemos manipular de mejor manera cada cosa en nuestras páginas. Con esto activamos el GRID */
-    display: grid;
-    /* Aquí procedemos a especificar cuántas columnas se quiere, podría haber colocado 1fr 1fr en el valor y es lo mismo a lo que coloqué abajo como se verá a continuación */
-    grid-template-columns: repeat(2, 1fr);
-    /* Por lo general para cada tipo de contenido se puede revisar cuántos elementos HIJO haay y de ahí saber cuántas columnas debemos definir */
-    /* Usamos la unidad FR que se refiere a FRACCIÓN. Al decir que serán 1fr y 1fr da a entender que hay un total de 2fr y que cada columna abarcará 1 y 1. Pero aquí también pudimos usar 50% y 50% obteniendo el mismo resultado */
-    grid-column-gap: 2rem;
-    /* Con esta propiedad de arriba y el valor, le indicamos la separación que habrá entre las columnas */
+
+@media (min-width: 768px) {
+    .contenido-nosotros {
+        /* Aquí empezamos a usar GRID que es con lo que sumado a FLEX podemos manipular de mejor manera cada cosa en nuestras páginas. Con esto activamos el GRID */
+        display: grid;
+        /* Aquí procedemos a especificar cuántas columnas se quiere, podría haber colocado 1fr 1fr en el valor y es lo mismo a lo que coloqué abajo como se verá a continuación */
+        grid-template-columns: repeat(2, 1fr);
+        /* Por lo general para cada tipo de contenido se puede revisar cuántos elementos HIJO haay y de ahí saber cuántas columnas debemos definir */
+        /* Usamos la unidad FR que se refiere a FRACCIÓN. Al decir que serán 1fr y 1fr da a entender que hay un total de 2fr y que cada columna abarcará 1 y 1. Pero aquí también pudimos usar 50% y 50% obteniendo el mismo resultado */
+        grid-column-gap: 2rem;
+        /* Con esta propiedad de arriba y el valor, le indicamos la separación que habrá entre las columnas */
+    }
 }
 
 .texto-nosotros blockquote {
@@ -517,7 +594,9 @@ h4 {
     /* Recordemos aquí que estos valores del PADDING corresponden a TOP, RIGHT, BOTTOM y LEFT */
 }
 
+
 /* ?Anuncio */
+
 .resumen-propiedad {
     display: flex;
     justify-content: space-between;
@@ -544,20 +623,26 @@ label {
     display: block;
 }
 
+
 /* A continuación podemos usar un SELECTOR DE ATRIBUTOS que puede indicar mediante TYPE / NAME / ID las cosas a las que queremos dar estos formatos. Se hace de la siguiente manera: 
     input[type="text"] {
         background-color: white;
     }
     De esta forma estaríamos indicando que los campos que sean de TYPE TEXT, lleven este formato
 */
+
+
 /* También para no tener que repetir código agregaríamos COMAS para poder poner más condiciones, por ejemplo: 
     input[type="text"], [type="email"] {
     padding: 1rem;
     }
 */
+
+
 /* Pero, en este caso haremos uso de otra cuestión ya que nos interesa que tome en cuenta todos los INPUT excepto algunos y para eso usamos lo siguiente */
-input:not([type="submit"]), 
-textarea, 
+
+input:not([type="submit"]),
+textarea,
 select {
     /* Como dijimos en el comentario de arriba, de esta forma pudimos seleccionar todos los INPUT excepto el SUBMIT que viene siendo el botón de ENVIAR. También pusimos COMA para aplicar todo esto al área de MENSAJE que es TEXTAREA */
     padding: 1rem;
